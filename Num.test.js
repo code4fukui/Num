@@ -75,3 +75,8 @@ Deno.test("fixbig mega", () => {
   t.assertEquals(Num.fixbig(1000000000000, true), "100京");
   t.assertEquals(Num.fixbig(10000000000000, true), "1000京");
 });
+Deno.test("fixbig minus", () => {
+  t.assertEquals(Num.fixbig(-1, true), "-100万");
+  t.assertEquals(Num.fixbig(-1, false), "-1");
+  t.assertEquals(Num.fixbig(-100000000000, true), "-10.0京");
+});
