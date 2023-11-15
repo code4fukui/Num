@@ -41,6 +41,7 @@ Deno.test("fixnum", () => { // same as toFixed
 Deno.test("fixfloat", () => {
   t.assertEquals(Num.fixfloat(1, 3), "1.000");
   t.assertEquals(Num.fixfloat(1), "1");
+  t.assertEquals(Num.fixfloat(1.55, 1), "1.5");
   t.assertEquals(Num.fixfloat(1.123, 1), "1.1");
   t.assertEquals(Num.fixfloat(1.123, 2), "1.12");
   t.assertEquals(Num.fixfloat(1.123, 3), "1.123");
@@ -79,4 +80,8 @@ Deno.test("fixbig minus", () => {
   t.assertEquals(Num.fixbig(-1, true), "-100万");
   t.assertEquals(Num.fixbig(-1, false), "-1");
   t.assertEquals(Num.fixbig(-100000000000, true), "-10.0京");
+});
+Deno.test("fixbig minus", () => {
+  t.assertEquals(Num.fixbig(10099, true), "100億");
+  t.assertEquals(Num.fixbig(9999, true), "99.9億");
 });

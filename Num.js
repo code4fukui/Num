@@ -45,8 +45,10 @@ export const fixnum = function(n, beam, digits = null) {
   }
   return s;
 };
-export const fixfloat = (d, digits) => {
-  return d.toFixed(digits);
+export const fixfloat = (d, digits = 0) => {
+  const fixed = Math.pow(10, digits);
+  return (Math.floor(d * fixed) / fixed).toFixed(digits);
+  //return d.toFixed(digits); // return rounded value
 };
 export const fixbig = (n, mega = false) => {
   const minus = n < 0 ? "-" : "";
