@@ -19,14 +19,16 @@ export const addComma = (n, digits = null) => {
   }
   return s;
 };
+export const isNumber = (s) => {
+  return /^\s*-?(\d{1,3}(,\d{3})+|\d+)(\.\d+)?\s*$/.test(s);
+};
 export const removeComma = (s) => {
-  if (s.length == 0)
-    return s;
+  if (s.length == 0) return s;
+  if (!isNumber(s)) return s;
   const s2 = s.replace(/,/g, "");
   const n = parseFloat(s2);
-  if (!isNaN(n))
-    return n;
-  return s;
+  if (isNaN(n)) return s;
+  return n;
 };
 export const fixnum = function(n, beam, digits = null) {
   const flg = n < 0;
