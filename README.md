@@ -1,5 +1,7 @@
 # Num
 
+> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
+
 A JavaScript library for formatting numbers.
 
 ## Features
