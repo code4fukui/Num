@@ -1,9 +1,13 @@
 # Num
 
-- addComma(n, digits = null)
-- removeComma(s)
-- fixnum(n, beam, digits)
-- fixfloat(n, digits)
+A JavaScript library for formatting numbers.
+
+## Features
+- `addComma(n, digits = null)`: Add commas to a number and optionally format decimal places.
+- `removeComma(s)`: Remove commas from a number string.
+- `fixnum(n, beam, digits)`: Format a number to a fixed width with optional decimal places.
+- `fixfloat(n, digits)`: Format a floating-point number to a fixed number of decimal places.
+- `fixbig(n, mega = false)`: Format a large number with appropriate units (e.g. 10,000 -> 1.00万).
 
 ## Usage
 
@@ -19,8 +23,12 @@ import { Num } from "https://code4fukui.github.io/Num/Num.js";
 console.log(Num.fixnum(1, 3)); // 001
 ```
 
-## test
+## Test
 
 ```sh
 deno test
 ```
+
+## License
+
+MIT License
