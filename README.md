@@ -9,7 +9,7 @@ A JavaScript library for formatting numbers.
 - `removeComma(s)`: Remove commas from a number string.
 - `fixnum(n, beam, digits)`: Format a number to a fixed width with optional decimal places.
 - `fixfloat(n, digits)`: Format a floating-point number to a fixed number of decimal places.
-- `fixbig(n, mega = false)`: Format a large number with appropriate units (e.g. 10,000 -> 1.00万).
+- `fixbig(n, mega = false)`: Format a large number with appropriate units (e.g. 10,000 → 1.00万).
 
 ## Usage
 
@@ -33,4 +33,4 @@ deno test
 
 ## License
 
-MIT License
+MIT License — see [LICENSE](LICENSE).
