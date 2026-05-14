@@ -1,26 +1,28 @@
 # Num
 
-- addComma(n, digits = null)
-- removeComma(s)
-- fixnum(n, beam, digits)
-- fixfloat(n, digits)
+> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
 
-## Usage
+A simple JavaScript/Deno library for number formatting, including comma separation, zero-padding, and compacting large numbers with Japanese units.
 
-```js
-import { fixnum } from "https://code4fukui.github.io/Num/Num.js";
+## API
 
-console.log(fixnum(1, 3)); // 001
-```
-or
+### `addComma(n, digits = null)`
+
+Adds thousand separators to a number. By default, it truncates any decimal part.
+
+-   `n` (number): The number to format.
+-   `digits` (number | null): The number of decimal places to include. If specified, the output is padded with zeros to match the length.
+
 ```js
 import { Num } from "https://code4fukui.github.io/Num/Num.js";
 
-console.log(Num.fixnum(1, 3)); // 001
+console.log(Num.addComma(1234567.89)); // "1,234,567"
+console.log(Num.addComma(-1000));      // "-1,000"
+console.log(Num.addComma(1000.123, 4)); // "1,000.1230"
 ```
 
-## test
+### `removeComma(s)`
 
-```sh
-deno test
-```
+Removes thousand separators from a string and parses it into a number.
+
+-   `s` (
